@@ -1,0 +1,4 @@
+package com.bootcamp.reporte.infrastructure.adapters.driven.r2dbc.entity;
+import org.springframework.data.annotation.Id; import org.springframework.data.relational.core.mapping.Table;
+@Table("report_person") public class ReportPersonEntity { @Id private Long id; private Long bootcampId; private String name; private String email;
+public ReportPersonEntity(){} public ReportPersonEntity(Long id,Long bootcampId,String name,String email){this.id=id;this.bootcampId=bootcampId;this.name=name;this.email=email;} public Long getId(){return id;} public void setId(Long v){id=v;} public Long getBootcampId(){return bootcampId;} public void setBootcampId(Long v){bootcampId=v;} public String getName(){return name;} public void setName(String v){name=v;} public String getEmail(){return email;} public void setEmail(String v){email=v;}}

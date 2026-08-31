@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: microservicio-reporte
+  r2dbc:
+    url: r2dbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:report_db}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
+    pool:
+      enabled: true
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+server:
+  port: ${SERVER_PORT:8085}
+bootcamp:
+  service:
+    url: ${BOOTCAMP_SERVICE_URL:http://localhost:8083}
+capability:
+  service:
+    url: ${CAPABILITY_SERVICE_URL:http://localhost:8081}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
